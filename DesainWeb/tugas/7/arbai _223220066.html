@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Arbai</title>
+  </head>
+  <body>
+    <section>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col align-self-center">
+            <div class="sp">
+              <table>
+                <tr>
+                  <th class="border border-success">Nama Sekolah</th>
+                  <th class="border border-success">Tahun Masuk</th>
+                  <th class="border border-success">Tahun Lulus</th>
+                </tr>
+                <tr>
+                  <td class="border border-danger">SD N 028 Kuala Lahang</td>
+                  <td class="border border-danger">2000</td>
+                  <td class="border border-danger">2006</td>
+                </tr>
+                <tr>
+                  <td class="border border-dark">MTS N Olak Kemang Jambi</td>
+                  <td class="border border-dark">2006</td>
+                  <td class="border border-dark">2009</td>
+                </tr>
+                <tr>
+                  <td class="border border-dark">SMK N 2 Tembilahan</td>
+                  <td class="border border-dark">2010</td>
+                  <td class="border border-dark">2013</td>
+                </tr>
+                <tr>
+                  <td class="border border-dark">UNAKI Semarang</td>
+                  <td class="border border-dark">2022</td>
+                  <td class="border border-dark">Present</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col align-self-center">
+            <div class="wrap">
+              <table>
+                <tr>
+                  <td>Nama</td>
+                  <td>:</td>
+                  <td>Arbai</td>
+                </tr>
+                <tr>
+                  <td>Alamat</td>
+                  <td>:</td>
+                  <td>jln. Merpati Blok 07.06</td>
+                </tr>
+                <tr>
+                  <td>Tanggal Lahir</td>
+                  <td>:</td>
+                  <td>03-08-1994</td>
+                </tr>
+                <tr>
+                  <td>No Hp</td>
+                  <td>:</td>
+                  <td>081268410654</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td>:</td>
+                  <td>arbai53@yahoo.com</td>
+                </tr>
+                <tr>
+                  <td>Jenis Kelamin</td>
+                  <td>:</td>
+                  <td>Laki - laki</td>
+                </tr>
+                <tr>
+                  <td>Agama</td>
+                  <td>:</td>
+                  <td>Islam</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <h2 class="typewrite text-white" data-period="2000" data-type='[ "Hello, World!.","Selamat Datang Di My Portfolio","Temukan Semua Tentang Saya Di Sini" ]'>
+      <span class="wrap">Hello, World!.</span>
+    </h2>
+
+    <p>To See My Portfolio <a href="https://mrarbai.github.io/MyPortfolio.github.io" target="_blank">Klik disini</a></p>
+    <script>
+      var TxtType = function (el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = "";
+        this.tick();
+        this.isDeleting = false;
+      };
+
+      TxtType.prototype.tick = function () {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) {
+          delta /= 2;
+        }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+          delta = this.period;
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === "") {
+          this.isDeleting = false;
+          this.loopNum++;
+          delta = 500;
+        }
+
+        setTimeout(function () {
+          that.tick();
+        }, delta);
+      };
+
+      window.onload = function () {
+        var elements = document.getElementsByClassName("typewrite");
+        for (var i = 0; i < elements.length; i++) {
+          var toRotate = elements[i].getAttribute("data-type");
+          var period = elements[i].getAttribute("data-period");
+          if (toRotate) {
+            new TxtType(elements[i], JSON.parse(toRotate), period);
+          }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+      };
+    </script>
+  </body>
+</html>
