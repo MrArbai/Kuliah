@@ -1,0 +1,179 @@
+/* navbar */
+  .navbar{
+    position: relative;
+    z-index: 1;
+  }
+
+  .navbar-brand {
+    font-weight: 500;
+  }
+/* end */
+
+/* jumbo */
+
+.jumbotron{
+  background-image: url(../images/bgj.jpg);
+  background-size: cover;
+  height: 757px;
+  
+}
+
+.jumbotron .container{
+  position: relative;
+  z-index: 1;
+}
+
+.jumbotron .display-4{
+color: white;
+text-align: center;
+margin-top: 150px;
+text-transform: uppercase;
+font-size: 30px;
+font-weight: 100;
+text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+
+}
+.jumbotron .display-4 span{
+  font-weight: 500;
+  color: red;
+}
+.jumbotron::after{
+content: '';
+display: block;
+width: 100%;
+height: 80%;
+background-image: linear-gradient(to top,rgba(0,0,0,1),rgba(0,0,0,0));
+position: absolute;
+bottom: -100px;
+
+
+}
+
+/* end */
+
+/* panel */
+  .panel{
+
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    background-color: white;
+    padding: 30px;
+    margin-top: -75px;
+
+  }
+  .panel img{
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  .panel h4{
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 5px;
+
+  }
+
+  .panel p{
+    font-size: 14px;
+    color: #acacac;
+    margin-top: -5px;
+    font-weight: 200;
+  }
+
+/* end */
+
+/* wor */
+.work{
+  margin-top: 120px;
+}
+.work h3{
+  font-size: 52px;
+  text-transform: uppercase;
+  font-weight: 200;
+  margin-top: 20px;
+}
+
+.work p{
+  font-size: 18px;
+  color: #acacac;
+
+}
+
+
+/* end */
+
+/* tessti */
+  .testi{
+    margin-top: 120px;
+  }
+
+  .testi h5{
+    text-align: center;
+    font-weight: 200;
+    font-style: italic;
+    font-size: 24px;
+  }
+
+  .testi figure img{
+    width: 100px;
+    
+  }
+  .figure-caption{
+    text-align: center;
+  }
+/* end */
+
+footer p{
+  margin-top: 100px;
+  text-align: center;
+}
+
+/* deksto version */
+
+@media (min-width: 992px) { 
+
+    .navbar-brand, .nav-link{
+      color: white !important;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+      text-transform: uppercase;
+    }
+    .nav-link{
+      text-transform: uppercase;
+      margin-right: 30px;
+    }
+
+    .nav-link:hover::after{
+      content: '';
+      display: block;
+      border-bottom: 3px solid blue;
+      width: 50%;
+      margin: auto;
+      padding-bottom: 5px;
+      margin-bottom: -8px;
+    }
+    .jumbotron{
+      height: 640px;margin-top: -75px;
+    }
+    .jumbotron .display-4{
+      font-size: 50px;
+      
+      }
+      .jumbotron::after{
+        content: '';
+        display: block;
+        width: 100%;
+        height: 80%;
+        background-image: linear-gradient(to top,rgba(0,0,0,1),rgba(0,0,0,0));
+        position: absolute;
+        bottom: 100px;
+        }
+
+        .testi h5{
+          font-size: 32px;
+        }
+
+ }
+/* end */
