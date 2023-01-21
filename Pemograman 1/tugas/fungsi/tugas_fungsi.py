@@ -29,7 +29,7 @@ def display(pesan,nilai):
 
 while True:
     header()
-    pilihan = input('input 1 untuk mengjitung luas, 2 untuk mencari keliling (1/2) = ')
+    pilihan = int(input('input 1 untuk menghitung luas, 2 untuk mencari keliling (1/2) = '))
     p,l = input_user()
     
     if pilihan == 1:
