@@ -40,23 +40,22 @@ def InputMenuBaru():
     menu.append(nama_menu)
     harga.append(harga_menu)
 
+def main():
+    while True:
+        header()
+        MenuAdmin()
+        Pilihan = int(input())
+        if Pilihan == 1:
+            TampilkanMenu()
+            Kasir()
+            
+        elif Pilihan == 2:
+            InputMenuBaru()
+            TampilkanMenu()
+            
+        isContinue = input('Apakah Lanjut (y/n)')
+        if isContinue == 'n':
+            break
+    print('Programselesai, Terima Kasih')
 
-while True:
-    header()
-    MenuAdmin()
-    Pilihan = int(input())
-    if Pilihan == 1:
-        TampilkanMenu()
-        Kasir()
-        
-    elif Pilihan == 2:
-        InputMenuBaru()
-        TampilkanMenu()
-        
-    isContinue = input('Apakah Lanjut (y/n)')
-    if isContinue == 'n':
-        break
-print('Programselesai, Terima Kasih')
-
-
-
+main()
