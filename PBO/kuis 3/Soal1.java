@@ -1,4 +1,4 @@
-import java.io.scanner;;;
+import java.io.scanner;
 
 public class soal1{
     public  static void(string args[])
