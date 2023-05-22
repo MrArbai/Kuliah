@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+
+  .dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+  }
+
+  .widget {
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-right: 20px;
+    opacity: 0; /* Initially hidden */
+    animation: fade-in 1s ease-in forwards; /* Fade-in animation */
+  }
+
+  .widget-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100;
+    }
+  }
