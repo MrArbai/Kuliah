@@ -29,12 +29,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `perusahaan` (
-  `KODE` int(10) NOT NULL,
+  `KODE` int(10) NOT NULL  AUTO_INCREMENT , PRIMARY KEY (`KODE`),
   `NAMA_PRSH` varchar(100) NOT NULL,
   `ALAMAT` varchar(100) NOT NULL,
   `TLP` varchar(100) NOT NULL,
   `EMAIL` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) 
 
 --
 -- Dumping data for table `perusahaan`
