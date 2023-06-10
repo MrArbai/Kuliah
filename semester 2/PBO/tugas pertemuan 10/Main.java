@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.Scanner;
 
 class Pegawai {
     private String idPegawai;
@@ -29,7 +30,9 @@ class Pegawai {
         }
         return 0;
     }
-
+    public LocalDate getTanggalLahir() {
+        return tanggalLahir;
+    }
     public double hitungTunjanganPegawai() {
         return 1_000_000;
     }
@@ -37,8 +40,6 @@ class Pegawai {
     public double hitungGajiTotal() {
         return hitungGajiPokok() + hitungTunjanganPegawai();
     }
-
-    // Getter dan setter lainnya
 }
 
 class Dosen extends Pegawai {
@@ -66,29 +67,60 @@ class Dosen extends Pegawai {
     public double hitungGajiTotal() {
         return hitungGajiPokok() + hitungTunjanganPegawai() + hitungTunjanganFungsional();
     }
-
-    // Getter dan setter lainnya
 }
 
 class NonDosen extends Pegawai {
     public NonDosen(String idPegawai, String namaPegawai, int golongan, LocalDate tanggalLahir) {
         super(idPegawai, namaPegawai, golongan, tanggalLahir);
     }
-
-    // Tidak ada perubahan pada method hitungTunjanganPegawai() dan hitungGajiTotal()
-
-    // Getter dan setter lainnya
 }
 
 public class Main {
     public static void main(String[] args) {
-        // Contoh penggunaan class Pegawai, Dosen, dan NonDosen
-        LocalDate tanggalLahirDosen = LocalDate.of(1978, 5, 10);
-        Dosen dosen = new Dosen("D001", "John Doe", 2, tanggalLahirDosen, "1234567890");
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Masukkan ID Pegawai: ");
+        String idPegawaiDosen = scanner.nextLine();
+
+        System.out.print("Masukkan Nama Pegawai: ");
+        String namaPegawaiDosen = scanner.nextLine();
+
+        System.out.print("Masukkan Golongan (1/2): ");
+        int golonganDosen = scanner.nextInt();
+        scanner.nextLine(); 
+
+        System.out.print("Masukkan Tanggal Lahir (YYYY-MM-DD): ");
+        String tanggalLahirDosenString = scanner.nextLine();
+        LocalDate tanggalLahirDosen = LocalDate.parse(tanggalLahirDosenString);
+
+        System.out.print("Masukkan NIDN: ");
+        String nidn = scanner.nextLine();
+
+        Dosen dosen = new Dosen(idPegawaiDosen, namaPegawaiDosen, golonganDosen, tanggalLahirDosen, nidn);
         System.out.println("Gaji Total Dosen: " + dosen.hitungGajiTotal());
 
-        LocalDate tanggalLahirNonDosen = LocalDate.of(1990, 8, 25);
-        NonDosen nonDosen = new NonDosen("ND001", "Jane Smith", 1, tanggalLahirNonDosen);
+        System.out.println();
+
+        System.out.print("Masukkan ID Pegawai: ");
+        String idPegawaiNonDosen = scanner.nextLine();
+
+        System.out.print("Masukkan Nama Pegawai: ");
+        String namaPegawaiNonDosen = scanner.nextLine();
+
+        System.out.print("Masukkan Golongan (1/2): ");
+        int golonganNonDosen = scanner.nextInt();
+        scanner.nextLine(); 
+
+        System.out.print("Masukkan Tanggal Lahir (YYYY-MM-DD): ");
+        String tanggalLahirNonDosenString = scanner.nextLine();
+        LocalDate tanggalLahirNonDosen = LocalDate.parse(tanggalLahirNonDosenString);
+
+        NonDosen nonDosen = new NonDosen(idPegawaiNonDosen, namaPegawaiNonDosen, golonganNonDosen, tanggalLahirNonDosen);
         System.out.println("Gaji Total NonDosen: " + nonDosen.hitungGajiTotal());
+
+        scanner.close();
     }
 }
+
+
+
